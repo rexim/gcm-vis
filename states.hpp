@@ -9,15 +9,7 @@
 class State
 {
 public:
-    State(GLfloat s1, GLfloat s2);
-
-    GLfloat s1() const;
-    GLfloat s2() const;
-    
     virtual State *tick(int msecs) = 0;
-
-protected:
-    GLfloat m_s1, m_s2;
 };
 
 // READY //////////////////////////////
@@ -25,11 +17,12 @@ protected:
 class Ready: public State
 {
 public:
-    Ready(GLfloat s1, GLfloat s2, int duration);
+    Ready(GLfloat seg1, GLfloat seg2, int duration);
 
     State *tick(int msecs);
 
 protected:
+    GLfloat segment1, segment2;
     int countdown;
 };
 
@@ -38,11 +31,12 @@ protected:
 class Merge: public State
 {
 public:
-    Merge(GLfloat s1, GLfloat s2, int duration);
+    Merge(GLfloat seg1, GLfloat seg2, int duration);
 
     State *tick(int msecs);
 
 protected:
+    GLfloat segment1, segment2;
     int countdown;
     GLfloat yStep;
 };
@@ -52,11 +46,12 @@ protected:
 class Split: public State
 {
 public:
-    Split(GLfloat s1, GLfloat s2, int duration);
+    Split(GLfloat seg1, GLfloat seg2, int duration);
 
     State *tick(int msecs);
 
 protected:
+    GLfloat segment1, segment2;
     int countdown;
     Vector2D pos1;
     Vector2D vel1;
@@ -69,9 +64,12 @@ protected:
 class Stop: public State
 {
 public:
-    Stop(GLfloat s1, GLfloat s2);
+    Stop(GLfloat seg);
 
     State *tick(int msecs);
+
+protected:
+    GLfloat segment;
 };
 
 #endif // STATES_HPP

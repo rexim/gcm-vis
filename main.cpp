@@ -10,11 +10,11 @@
 //#define SAVE_FRAMES
 #define WIDTH 800
 #define HEIGHT 600
-#define TICK_MSECS 50
+#define TICK_MSECS 10
 
 using namespace std;
 
-State *state = new Ready(1.5, 0.6, 1000);
+State *state = new Ready(1.5f, 0.6f, 1000);
 int counter = 0;
 
 void saveScreen(const char *filename)
@@ -55,8 +55,8 @@ void nextFrame()
     glVertex2f(1.0f, 0.0);
 
     for(int x = -200; x <= 200; x += 5) {
-        glVertex2f(x * 0.01, -0.01);
-        glVertex2f(x * 0.01, 0.01);
+        glVertex2f(x * 0.01f, -0.01f);
+        glVertex2f(x * 0.01f, 0.01f);
     }
 
     glEnd();

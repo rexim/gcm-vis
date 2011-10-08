@@ -30,6 +30,7 @@ Vector2D &Vector2D::operator/=(float scalar)
 {
     x /= scalar;
     y /= scalar;
+    return *this;
 }
 
 float Vector2D::length() const
