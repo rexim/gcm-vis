@@ -14,9 +14,9 @@
 
 using namespace std;
 
-// State *state = new Ready(1.5f, 0.6f, 1000);
-State *state = new Ready(1.0f, 1.4142135623730951f, 1000);
-int counter = 0;
+State *state = new Ready(1.5f, 0.6f, 1000);
+// State *state = new Ready(1.0f, 1.4142135623730951f, 1000);
+int filenameCounter = 0;
 
 void saveScreen(const char *filename)
 {
@@ -65,14 +65,17 @@ void nextFrame()
     glLineWidth(6.0);
     State *nextState = state->tick(TICK_MSECS);
 
-    if(state != nextState)
+    if(state != nextState) {
         delete state;
+        SDL_WM_SetCaption(nextState->name().c_str(), 0);
+    }
 
     state = nextState;
 
+
 #ifdef SAVE_FRAMES
     ostringstream oss;
-    oss << "frame" << counter++ << ".bmp";
+    oss << "frame" << filenameCounter++ << ".bmp";
     saveScreen(oss.str().c_str());
 #endif // SAVE_FRAMES
 
@@ -127,7 +130,7 @@ int main()
     if(SDL_SetVideoMode(WIDTH, HEIGHT, 24, SDL_OPENGL | SDL_DOUBLEBUF) == NULL)
         fail(string("ERROR: cannot set video mode: ") + SDL_GetError());
 
-    SDL_WM_SetCaption("Greatest Common Measure", 0);
+    SDL_WM_SetCaption(state->name().c_str(), 0);
 
     initOpenGL();
     startLoop();

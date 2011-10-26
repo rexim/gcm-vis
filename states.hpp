@@ -1,6 +1,7 @@
 #ifndef STATES_HPP
 #define STATES_HPP
 
+#include <string>
 #include <GL/gl.h>
 #include "misc.hpp"
 
@@ -10,6 +11,7 @@ class State
 {
 public:
     virtual State *tick(int msecs) = 0;
+    virtual const std::string name() const = 0;
 };
 
 // READY //////////////////////////////
@@ -20,6 +22,7 @@ public:
     Ready(GLfloat seg1, GLfloat seg2, int duration);
 
     State *tick(int msecs);
+    const std::string name() const;
 
 protected:
     GLfloat segment1, segment2;
@@ -34,6 +37,7 @@ public:
     Merge(GLfloat seg1, GLfloat seg2, int duration);
 
     State *tick(int msecs);
+    const std::string name() const;
 
 protected:
     GLfloat segment1, segment2;
@@ -49,6 +53,7 @@ public:
     Split(GLfloat seg1, GLfloat seg2, int duration);
 
     State *tick(int msecs);
+    const std::string name() const;
 
 protected:
     GLfloat segment1, segment2;
@@ -67,6 +72,7 @@ public:
     Stop(GLfloat seg);
 
     State *tick(int msecs);
+    const std::string name() const;
 
 protected:
     GLfloat segment;

@@ -38,6 +38,11 @@ State *Ready::tick(int msecs)
         return new Merge(segment1, segment2, 700);
 }
 
+const std::string Ready::name() const
+{
+    return "Ready";
+}
+
 // MERGE //////////////////////////////
 
 Merge::Merge(GLfloat seg1, GLfloat seg2, int duration):
@@ -61,6 +66,11 @@ State *Merge::tick(int msecs)
     }
     
     return this;
+}
+
+const std::string Merge::name() const
+{
+    return "Merge";
 }
 
 // SPLIT //////////////////////////////
@@ -121,6 +131,11 @@ State *Split::tick(int msecs)
         return new Ready(segment1, segment2, 700);
 }
 
+const std::string Split::name() const
+{
+    return "Split";
+}
+
 // STOP //////////////////////////////
 
 Stop::Stop(GLfloat seg):
@@ -137,4 +152,9 @@ State *Stop::tick(int)
 
     glEnd();
     return this;
+}
+
+const std::string Stop::name() const
+{
+    return "Stop";
 }
