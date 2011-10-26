@@ -53,8 +53,12 @@ State *Merge::tick(int msecs)
     if(countdown > 0) {
         countdown -= msecs;
         return this;
-    } else
-        return new Split(segment1, segment2, 700);
+    } else {
+        if(abs(segment1 - segment2) < 0.000001)
+            return new Stop(segment1);
+        else
+            return new Split(segment1, segment2, 700);
+    }
     
     return this;
 }
@@ -127,6 +131,7 @@ State *Stop::tick(int)
 {
     glBegin(GL_LINES);
 
+    glColor3f(1.0f, 1.0f, 1.0f);
     glVertex2f(-segment / 2.0f, 0.0f);
     glVertex2f(segment / 2.0f, 0.0f);
 

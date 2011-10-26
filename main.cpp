@@ -7,14 +7,15 @@
 #include <GL/gl.h>
 #include "states.hpp"
 
-//#define SAVE_FRAMES
+// #define SAVE_FRAMES
 #define WIDTH 800
 #define HEIGHT 600
 #define TICK_MSECS 10
 
 using namespace std;
 
-State *state = new Ready(1.5f, 0.6f, 1000);
+// State *state = new Ready(1.5f, 0.6f, 1000);
+State *state = new Ready(1.0f, 1.4142135623730951f, 1000);
 int counter = 0;
 
 void saveScreen(const char *filename)
@@ -61,7 +62,7 @@ void nextFrame()
 
     glEnd();
     
-    glLineWidth(3.0);
+    glLineWidth(6.0);
     State *nextState = state->tick(TICK_MSECS);
 
     if(state != nextState)
@@ -125,6 +126,8 @@ int main()
 
     if(SDL_SetVideoMode(WIDTH, HEIGHT, 24, SDL_OPENGL | SDL_DOUBLEBUF) == NULL)
         fail(string("ERROR: cannot set video mode: ") + SDL_GetError());
+
+    SDL_WM_SetCaption("Greatest Common Measure", 0);
 
     initOpenGL();
     startLoop();
