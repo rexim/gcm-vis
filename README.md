@@ -16,17 +16,21 @@ Building
 
 ### Linux
 Go to the source directory:
+
     $ cd gcm-vis/
 
 Make separated build directory:
+
     $ mkdir build
     $ cd build/
     
 Configure and build gcm-vis:
+
     $ cmake ..
     $ make
 
 Run:
+
     $ ./gcm-vis
 
 ### Windows
