@@ -1,16 +1,16 @@
 cmake_minimum_required(VERSION 2.8)
-project(gcm)
+project(gcm-vis)
 
 find_package(SDL REQUIRED)
 find_package(OpenGL REQUIRED)
 
-add_executable(gcm
+add_executable(gcm-vis
   main.cpp
   states.cpp
   misc.cpp
 )
 
-target_link_libraries(gcm
+target_link_libraries(gcm-vis
   ${SDL_LIBRARY}
   ${OPENGL_LIBRARY}
 )
