@@ -1,8 +1,6 @@
 gcm-vis
 =======
 
-![](image.gif)
-
 About
 =====
 This is a visualization of the Greatest Common Measure algorithm for
