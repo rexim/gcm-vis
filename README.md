@@ -1,12 +1,14 @@
 gcm-vis
 =======
 
+![](image.gif)
+
 About
 =====
-This is visualization of Greatest Common Measure algorithm for two
-segments. I made it after listening to Alexander Stepanov's
-[lecture](http://www.stepanovpapers.com/gcd.pdf) "Greatest Common Measure:
-the Last 2500 Years".
+This is a visualization of the Greatest Common Measure algorithm for
+two segments. I made it after listening to Alexander Stepanov's
+[lecture](http://www.stepanovpapers.com/gcd.pdf) "Greatest Common
+Measure: the Last 2500 Years".
 
 Building
 ========
@@ -19,7 +21,7 @@ Go to the source directory:
 
     $ cd gcm-vis/
 
-Make separated build directory:
+Make a separate build directory:
 
     $ mkdir build
     $ cd build/

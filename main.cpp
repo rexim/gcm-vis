@@ -26,9 +26,9 @@
 #include <GL/gl.h>
 #include "states.hpp"
 
-#define WIDTH 800
-#define HEIGHT 600
-#define TICK_MSECS 10
+#define WIDTH 400
+#define HEIGHT 200
+#define TICK_MSECS 20
 
 using namespace std;
 
@@ -91,7 +91,7 @@ void nextFrame()
 
     state = nextState;
 
-    // Sace Frames ////////////////////
+    // Save Frames ////////////////////
 #ifdef SAVE_FRAMES
     ostringstream oss;
     oss << "frame" << filenameCounter++ << ".bmp";
