@@ -1,6 +1,8 @@
 gcm-vis
 =======
 
+![gcm](https://github.com/rexim/gcm-vis/raw/master/gcm.gif)
+
 About
 =====
 This is a visualization of the Greatest Common Measure algorithm for
