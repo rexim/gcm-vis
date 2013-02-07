@@ -22,7 +22,9 @@
 
 #include <iostream>
 #include <sstream>
+#ifdef _WIN32
 #include <windows.h>
+#endif // _WIN32
 #include <SDL.h>
 #include <GL/gl.h>
 #include "states.hpp"

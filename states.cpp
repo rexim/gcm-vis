@@ -23,7 +23,9 @@
 #include <iostream>
 #include <algorithm>
 #include <cmath>
+#ifdef _WIN32
 #include <windows.h>
+#endif // _WIN32
 #include "states.hpp"
 
 using namespace std;
