@@ -4,6 +4,8 @@ project(gcm-vis)
 find_package(SDL REQUIRED)
 find_package(OpenGL REQUIRED)
 
+include_directories(${SDL_INCLUDE_DIR})
+
 add_executable(gcm-vis
   main.cpp
   states.cpp

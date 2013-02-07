@@ -22,7 +22,8 @@
 
 #include <iostream>
 #include <sstream>
-#include <SDL/SDL.h>
+#include <windows.h>
+#include <SDL.h>
 #include <GL/gl.h>
 #include "states.hpp"
 
@@ -141,7 +142,7 @@ void fail(const string &message)
     exit(1);
 }
 
-int main()
+int main(int argc, char **argv)
 {
     if(SDL_Init(SDL_INIT_VIDEO) != 0)
         fail(string("ERROR: cannot initialize SDL: ") + SDL_GetError());

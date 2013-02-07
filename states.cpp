@@ -23,6 +23,7 @@
 #include <iostream>
 #include <algorithm>
 #include <cmath>
+#include <windows.h>
 #include "states.hpp"
 
 using namespace std;
