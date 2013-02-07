@@ -36,7 +36,11 @@ Run:
     $ ./gcm-vis
 
 ### Windows
-I haven't tested it under Windows.
+I have tested it under Windows XP a couple of times using MSVC 9.0
+compiler. And it works pretty well. But I will not describe the
+process of building Windows version of gcm-vis here, because the exact
+instructions depend on many different things. Just use CMake with
+preferred options and see what it tells.
 
 License
 =======
