@@ -1,5 +1,5 @@
 // Copyright (c) 2011 by rexim
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -7,10 +7,10 @@
 // modify, merge, publish, distribute, sublicense, and/or sell copies
 // of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be
 // included in all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 // EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 // MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -33,7 +33,7 @@ using namespace std;
 static void drawParallel(GLfloat segment1, GLfloat segment2, GLfloat yDistance)
 {
     GLfloat xStart = -max(segment1, segment2) / 2.0f;
-    
+
     glBegin(GL_LINES);
 
     glColor3f(1.0f, 1.0f, 1.0f);
@@ -42,7 +42,7 @@ static void drawParallel(GLfloat segment1, GLfloat segment2, GLfloat yDistance)
 
     glVertex2f(xStart, -yDistance / 2.0f);
     glVertex2f(xStart + min(segment1, segment2), -yDistance / 2.0f);
-    
+
     glEnd();
 }
 
@@ -89,7 +89,7 @@ State *Merge::tick(int msecs)
         else
             return new Split(segment1, segment2, 700);
     }
-    
+
     return this;
 }
 
